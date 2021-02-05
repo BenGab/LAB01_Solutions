@@ -6,7 +6,19 @@
         xmlns:local="clr-namespace:LAB01_Solutions"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <StackPanel x:Name="mainPanel">
+        <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+            <Label Content="Income:" Width="100" />
+            <TextBox Width="200" Margin="5,0,0,0" x:Name="tbIncome"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+            <Label Content="Tax:" Width="100" />
+            <TextBox Width="200" Margin="5,0,0,0" x:Name="tbTax" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+            <Label Content="Paid:" Width="100" />
+            <TextBox Width="200" Margin="5,0,0,0" x:Name="tbPaid"/>
+        </StackPanel>
+        <Button Content="Calculate" Margin="0,5,0,5" Width="100" HorizontalAlignment="Left" />
+    </StackPanel>
 </Window>
