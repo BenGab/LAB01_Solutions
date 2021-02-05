@@ -24,5 +24,28 @@ namespace LAB01_Solutions
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                double income = double.Parse(tbIncome.Text);
+                double paid = double.Parse(tbPaid.Text);
+                uint percent = uint.Parse(tbTax.Text);
+
+                uint computed = (uint)((paid / income) * 100);
+
+                MessageBox.Show(computed < percent ? "Undperpaid" : computed == percent ? "Equal Paid" : "OverPaid");
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Invalid Inputs");
+            }
+            catch(OverflowException)
+            {
+                MessageBox.Show("Too Big Numbers");
+            }
+            e.Handled = true;
+        }
     }
 }
